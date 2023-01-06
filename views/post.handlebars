@@ -1,0 +1,68 @@
+<div class="row mt-4">
+  <div class="col-md-6">
+    <h2>Add a New Post:</h2>
+<!-- HTML for the add page with input boxes -->
+    <form class="form new-post-form">
+      <div class="form-group">
+        <label for="post-title">Post Title:</label>
+        <input
+          class="form-input"
+          type="text"
+          id="post-title"
+          name="post-title"
+        />
+      </div>
+      </div>
+      <div class="form-group">
+        <label for="creator-username">Post Creator</label>
+        <input
+          class="form-input"
+          type="text"
+          id="post-creator"
+          name="post-creator"
+          />
+      </div>
+      <div class="form-group">
+        <label for="post-desc">Description:</label>
+        <textarea
+          class="form-input"
+          id="expense-desc"
+          name="expense-desc"
+        ></textarea>
+      </div>
+      <div class="form-group">
+        <label for="date-created">Date Created:</label>
+        <textarea class="form-input" id="date-created" name="date-created"></textarea>
+      </div>
+      <div class="form-group">
+        <button type="submit" class="btn btn-success">Add</button>
+      </div>
+    </form>
+  </div>
+
+<!-- HTML for the active expenses the user has -->
+  {{#if Newpost.length}}
+    <div class="col-md-6 post-list">
+      <h3>Active Posts:</h3>
+
+      {{#each Newpost as |post|}}
+        <div class="row mb-2">
+          <div class="col-md-8">
+            <h4><a
+                href="/expense/{{post.id}}"
+              >{{post.title}}</a></h4>
+          </div>
+          <div class="col-md-4">
+            <button
+              class="btn btn-warning del-user-button"
+              data-id="{{post.id}}"
+            >DELETE</button>
+          </div>
+        </div>
+      {{/each}}
+    </div>
+  {{/if}}
+</div>
+
+<!-- <script src="../public/js/profile.js"></script> . -->
+<script src="../public/js/profile.js"></script>

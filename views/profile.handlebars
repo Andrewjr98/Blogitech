@@ -1,0 +1,19 @@
+{{#if post.length}}
+<div class="col-md-6 post-list">
+    <h3>Active Posts</h3>
+
+    {{#each post as |post|}}
+    <div class="row mb-2" data-id="">
+        <div class="col-md-8">
+            <h4><a href="/post/{{post.id}}">{{post.title}}</a></h4>
+        </div>
+        <div class="col-md-4">
+            <button class="btn btn-sm btn-warning del-button" data-id="{{post.id}}">DELETE Post</button>
+        </div>
+    </div>
+    {{/each}}
+</div>
+{{/if}}
+</div>
+
+<script src="../public/js/profile.js"></script>
